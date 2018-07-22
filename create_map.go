@@ -49,7 +49,7 @@ func init() {
 
 func CreateMap() {
 
-	emojiMap, err := GenerateJson()
+	emojiMap, err := GenerateJson(true)
 	if err != nil {
 		log.Fatalln(err)
 	}

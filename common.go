@@ -9,7 +9,7 @@ import (
 
 const gemojiDBJsonURL = "https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json"
 
-func GenerateJson() (map[string]string, error) {
+func GenerateJson(permitEscape bool) (map[string]string, error) {
 	res, err := http.Get(gemojiDBJsonURL)
 	if err != nil {
 		return nil, err
@@ -29,7 +29,11 @@ func GenerateJson() (map[string]string, error) {
 	emojiCodeMap := make(map[string]string)
 	for _, gemoji := range gs {
 		for _, a := range gemoji.Aliases {
-			emojiCodeMap[a] = fmt.Sprintf("%+q", gemoji.Emoji)
+			if permitEscape {
+				emojiCodeMap[a] = fmt.Sprintf("%+q", gemoji.Emoji)
+			} else {
+				emojiCodeMap[a] = gemoji.Emoji
+			}
 		}
 	}
 

@@ -35,6 +35,20 @@ import (
 )
 
 func main() {
-  ejikit.Output()
+  ejikit.EmojiOutput()
+}
+```
+
+### Output oneline output emoji
+
+```go
+package main
+
+import (
+  "github.com/fukumone/ejikit"
+)
+
+func main() {
+  ejikit.OnLineEmojiOutPut()
 }
 ```
