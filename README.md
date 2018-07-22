@@ -1,4 +1,4 @@
-generateEmojiCodeMap
+ejiKit
 ====================
 
 Generate a useful template for emoji
@@ -11,6 +11,16 @@ $ go get github.com/fukumone/generateEmojiCodeMap
 
 ## Usage
 
+### Create a mapping for emoji
+
 ```go
-//go:generate generateEmojiCodeMap -pkg emoji
+package main
+
+import (
+  "github.com/fukumone/ejikit"
+)
+
+func main() {
+  ejikit.CreateMap()
+}
 ```
