@@ -1,9 +1,9 @@
 package main
 
 import (
-  "github.com/fukumone/ejikit"
+	"github.com/fukumone/ejikit"
 )
 
 func main() {
-  ejikit.CreateMap()
+	ejikit.CreateMap()
 }

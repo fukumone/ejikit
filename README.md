@@ -1,4 +1,4 @@
-ejiKit
+ejikit
 ====================
 
 Generate a useful template for emoji
@@ -6,7 +6,7 @@ Generate a useful template for emoji
 ## Install
 
 ```bash
-$ go get github.com/fukumone/generateEmojiCodeMap
+$ go get github.com/fukumone/ejikit
 ```
 
 ## Usage
@@ -22,5 +22,19 @@ import (
 
 func main() {
   ejikit.CreateMap()
+}
+```
+
+### Output emoji list
+
+```go
+package main
+
+import (
+  "github.com/fukumone/ejikit"
+)
+
+func main() {
+  ejikit.Output()
 }
 ```
