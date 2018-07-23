@@ -11,7 +11,7 @@ $ go get github.com/fukumone/ejikit
 
 ## Usage
 
-### Create a mapping for emoji
+### Create template for emoji
 
 ```go
 package main
