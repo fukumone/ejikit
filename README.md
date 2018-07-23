@@ -1,7 +1,7 @@
 ejikit
 ====================
 
-Generate a useful template for emoji
+Generate a useful template for [eji](https://github.com/fukumone/eji)
 
 ## Install
 
