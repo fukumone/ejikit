@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	ejikit.CreateMap()
+	ejikit.CreateTemplate()
 	ejikit.OnLineEmojiOutPut()
 	ejikit.EmojiOutPut()
 }

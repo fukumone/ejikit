@@ -25,13 +25,19 @@ type TemplateData struct {
 const templateMapCode = `
 package {{.PkgName}}
 
-// NOTE: THIS FILE WAS PRODUCED BY THE
-// EMOJICODEMAP CODE GENERATION TOOL (github.com/kyokomi/generateEmojiCodeMap)
-// DO NOT EDIT
-
 // Mapping from character to concrete escape code.
 var emojiCodeMap = map[string]string{
   {{range $key, $val := .CodeMap}}":{{$key}}:": {{$val}},
+{{end}}
+}
+
+var emojiNameArray = []string{
+  {{range $key, $val := .CodeMap}}":{{$key}}:",
+{{end}}
+}
+
+var emojiValueArray = []string{
+	{{range $key, $val := .CodeMap}}{{$val}},
 {{end}}
 }
 `
@@ -43,11 +49,11 @@ func init() {
 	log.SetFlags(log.Llongfile)
 
 	flag.StringVar(&pkgName, "pkg", "main", "output package")
-	flag.StringVar(&fileName, "o", "emoji_codemap.go", "output file")
+	flag.StringVar(&fileName, "o", "emoji_template.go", "output file")
 	flag.Parse()
 }
 
-func CreateMap() {
+func CreateTemplate() {
 
 	emojiMap, err := GenerateJson(true)
 	if err != nil {

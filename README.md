@@ -21,7 +21,7 @@ import (
 )
 
 func main() {
-  ejikit.CreateMap()
+  ejikit.CreateTemplate()
 }
 ```
 
@@ -39,7 +39,7 @@ func main() {
 }
 ```
 
-### Output oneline output emoji
+### Output oneline emoji
 
 ```go
 package main
